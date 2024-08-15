@@ -8,6 +8,9 @@ size = Vector2(88, 26)
 [node name="Brick" type="StaticBody2D"]
 script = ExtResource("1_lop07")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_st1ob")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,6 +23,4 @@ offset_right = 44.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_st1ob")
+color = Color(0.649472, 0.539871, 0.0987292, 1)
