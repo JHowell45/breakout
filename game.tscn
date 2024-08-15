@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=9 format=3 uid="uid://l20jvncgqkbr"]
 
+[ext_resource type="Script" path="res://StartSplashScreen.gd" id="1_g2so0"]
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
 [ext_resource type="PackedScene" uid="uid://drrdquwt8q0pr" path="res://floor.tscn" id="3_r1gvo"]
@@ -16,6 +17,7 @@ size = Vector2(1202, 30)
 layer = -1
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -228,3 +230,18 @@ script = ExtResource("6_2kh5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverZone"]
 shape = SubResource("RectangleShape2D_g7tqf")
+
+[node name="StartSplashScreen" type="ColorRect" parent="."]
+color = Color(1, 1, 1, 0.215686)
+script = ExtResource("1_g2so0")
+
+[node name="Button" type="Button" parent="StartSplashScreen"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 286.0
+offset_right = 680.0
+offset_bottom = 357.0
+text = "Press to play!"
+
+[connection signal="area_entered" from="GameOverZone" to="GameOverZone" method="_on_area_entered"]
+[connection signal="pressed" from="StartSplashScreen/Button" to="StartSplashScreen" method="_on_button_pressed"]
