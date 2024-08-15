@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=4 format=3 uid="uid://l20jvncgqkbr"]
 
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
+[ext_resource type="PackedScene" uid="uid://drrdquwt8q0pr" path="res://floor.tscn" id="3_r1gvo"]
 
 [node name="Game" type="Node2D"]
 
@@ -24,3 +25,6 @@ position = Vector2(-10, 308)
 
 [node name="Wall2" parent="." instance=ExtResource("2_stwos")]
 position = Vector2(1162, 314)
+
+[node name="Floor" parent="." instance=ExtResource("3_r1gvo")]
+position = Vector2(559, -10)
