@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=7 format=3 uid="uid://l20jvncgqkbr"]
 
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
 [ext_resource type="PackedScene" uid="uid://drrdquwt8q0pr" path="res://floor.tscn" id="3_r1gvo"]
 [ext_resource type="PackedScene" uid="uid://btm13oyc7sd4v" path="res://ball.tscn" id="4_mqxkg"]
 [ext_resource type="PackedScene" uid="uid://c78rf0unjhbu7" path="res://brick.tscn" id="5_acytq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7tqf"]
+size = Vector2(1202, 30)
 
 [node name="Game" type="Node2D"]
 
@@ -33,9 +36,6 @@ position = Vector2(559, -10)
 
 [node name="Ball" parent="." instance=ExtResource("4_mqxkg")]
 position = Vector2(561, 326)
-
-[node name="Floor2" parent="." instance=ExtResource("3_r1gvo")]
-position = Vector2(559, 659)
 
 [node name="Floor3" parent="." instance=ExtResource("3_r1gvo")]
 position = Vector2(559, -10)
@@ -219,3 +219,9 @@ position = Vector2(986, 41)
 
 [node name="Brick60" parent="." instance=ExtResource("5_acytq")]
 position = Vector2(1077, 41)
+
+[node name="GameOverZone" type="Area2D" parent="."]
+position = Vector2(561, 663)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverZone"]
+shape = SubResource("RectangleShape2D_g7tqf")
