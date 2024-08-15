@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=3 format=3 uid="uid://l20jvncgqkbr"]
 
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
+[ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
 
 [node name="Game" type="Node2D"]
 
@@ -17,3 +18,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_wtcrm")]
 position = Vector2(567, 618)
+
+[node name="Wall" parent="." instance=ExtResource("2_stwos")]
+position = Vector2(-10, 340)
+
+[node name="Wall2" parent="." instance=ExtResource("2_stwos")]
+position = Vector2(1162, 362)
