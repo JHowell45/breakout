@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" path="res://brick.gd" id="1_lop07"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6nw"]
-size = Vector2(86, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st1ob"]
+size = Vector2(30, 8)
 
 [node name="Brick" type="StaticBody2D"]
 script = ExtResource("1_lop07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_st1ob")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -14,14 +17,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.0
-offset_top = -14.5
-offset_right = 43.0
-offset_bottom = 14.5
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 15.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.260277, 0.457316, 0.584596, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_nk6nw")
