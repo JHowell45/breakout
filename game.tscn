@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=8 format=3 uid="uid://l20jvncgqkbr"]
 
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
 [ext_resource type="PackedScene" uid="uid://drrdquwt8q0pr" path="res://floor.tscn" id="3_r1gvo"]
 [ext_resource type="PackedScene" uid="uid://btm13oyc7sd4v" path="res://ball.tscn" id="4_mqxkg"]
 [ext_resource type="PackedScene" uid="uid://c78rf0unjhbu7" path="res://brick.tscn" id="5_acytq"]
+[ext_resource type="Script" path="res://GameOverZone.gd" id="6_2kh5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7tqf"]
 size = Vector2(1202, 30)
@@ -221,7 +222,9 @@ position = Vector2(986, 41)
 position = Vector2(1077, 41)
 
 [node name="GameOverZone" type="Area2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(561, 663)
+script = ExtResource("6_2kh5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverZone"]
 shape = SubResource("RectangleShape2D_g7tqf")
