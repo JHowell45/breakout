@@ -8,6 +8,9 @@ size = Vector2(168, 28)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fwupx")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vfdpd")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,6 +23,3 @@ offset_right = 83.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vfdpd")

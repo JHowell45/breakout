@@ -20,7 +20,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(567, 618)
 
 [node name="Wall" parent="." instance=ExtResource("2_stwos")]
-position = Vector2(-10, 340)
+position = Vector2(-10, 308)
 
 [node name="Wall2" parent="." instance=ExtResource("2_stwos")]
-position = Vector2(1162, 362)
+position = Vector2(1162, 314)
