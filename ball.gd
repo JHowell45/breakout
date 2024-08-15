@@ -8,8 +8,9 @@ func _ready():
 
 func _physics_process(delta):
 	#print("BALL: %s" % velocity)
-	if get_slide_collision_count():
-		print(get_slide_collision_count())
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+		var node = collision.get_collider()
+		if node.has_method("crack"):
+			node.crack()
