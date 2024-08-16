@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://drrdquwt8q0pr" path="res://floor.tscn" id="3_r1gvo"]
 [ext_resource type="PackedScene" uid="uid://btm13oyc7sd4v" path="res://ball.tscn" id="4_mqxkg"]
 [ext_resource type="PackedScene" uid="uid://c78rf0unjhbu7" path="res://brick.tscn" id="5_acytq"]
-[ext_resource type="Script" path="res://GameOverZone.gd" id="6_2kh5w"]
+[ext_resource type="Script" path="res://GameOverSplashScreen.gd" id="8_t2bci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7tqf"]
-size = Vector2(1202, 30)
+size = Vector2(1152, 30)
 
 [node name="Game" type="Node2D"]
 
@@ -224,24 +224,60 @@ position = Vector2(986, 41)
 position = Vector2(1077, 41)
 
 [node name="GameOverZone" type="Area2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(561, 663)
-script = ExtResource("6_2kh5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverZone"]
+position = Vector2(15, 0)
 shape = SubResource("RectangleShape2D_g7tqf")
 
 [node name="StartSplashScreen" type="ColorRect" parent="."]
 color = Color(1, 1, 1, 0.215686)
 script = ExtResource("1_g2so0")
 
+[node name="Label" type="Label" parent="StartSplashScreen"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 228.0
+offset_right = 786.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 40
+text = "Press the button to start!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button" type="Button" parent="StartSplashScreen"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 286.0
-offset_right = 680.0
-offset_bottom = 357.0
-text = "Press to play!"
+offset_left = 493.0
+offset_top = 299.0
+offset_right = 623.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
 
-[connection signal="area_entered" from="GameOverZone" to="GameOverZone" method="_on_area_entered"]
+[node name="GameOverSplashScreen" type="ColorRect" parent="."]
+visible = false
+color = Color(1, 1, 1, 0.215686)
+script = ExtResource("8_t2bci")
+
+[node name="Label" type="Label" parent="GameOverSplashScreen"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 249.0
+offset_right = 762.0
+offset_bottom = 346.0
+theme_override_font_sizes/font_size = 71
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="GameOverSplashScreen"]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 367.0
+offset_right = 635.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 38
+text = "Restart"
+
+[connection signal="game_over" from="Ball" to="GameOverSplashScreen" method="_on_ball_game_over"]
+[connection signal="body_entered" from="GameOverZone" to="Ball" method="_on_game_over_zone_body_entered"]
 [connection signal="pressed" from="StartSplashScreen/Button" to="StartSplashScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="GameOverSplashScreen/Button" to="GameOverSplashScreen" method="_on_button_pressed"]
