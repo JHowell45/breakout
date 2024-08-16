@@ -19,4 +19,5 @@ func _physics_process(delta):
 
 func _on_game_over_zone_body_entered(body):
 	if (body.has_method("move_and_slide")):
+		queue_free()
 		game_over.emit()
