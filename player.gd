@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 35000
+const SPEED = 350
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
@@ -8,4 +8,4 @@ func _physics_process(delta):
 		velocity = Vector2.LEFT * SPEED * delta
 	elif Input.is_action_pressed("ui_right"):
 		velocity = Vector2.RIGHT * SPEED * delta
-	move_and_slide()
+	move_and_collide(velocity)
