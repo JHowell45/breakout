@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=10 format=3 uid="uid://l20jvncgqkbr"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_01ha5"]
 [ext_resource type="Script" path="res://StartSplashScreen.gd" id="1_g2so0"]
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
@@ -12,12 +13,12 @@
 size = Vector2(1152, 30)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_01ha5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_wtcrm")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_wtcrm")]
 position = Vector2(567, 618)
 
 [node name="Wall" parent="." instance=ExtResource("2_stwos")]
@@ -37,7 +38,7 @@ position = Vector2(1162, 314)
 [node name="Floor" parent="." instance=ExtResource("3_r1gvo")]
 position = Vector2(559, -10)
 
-[node name="Ball" parent="." instance=ExtResource("4_mqxkg")]
+[node name="Ball" parent="." groups=["Balls"] instance=ExtResource("4_mqxkg")]
 position = Vector2(561, 326)
 
 [node name="Floor3" parent="." instance=ExtResource("3_r1gvo")]
