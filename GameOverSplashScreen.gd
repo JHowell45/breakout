@@ -9,6 +9,6 @@ func _on_button_pressed():
 
 func _on_ball_game_over():
 	Globals.ball_count -= 1
-	#if Globals.ball_count <= 0:
-		#get_tree().paused = true
-		#show()
+	if Globals.ball_count <= 0:
+		get_tree().paused = true
+		show()
