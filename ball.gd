@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal game_over
+
 const SPEED = 700
 
 func _ready():
@@ -13,3 +15,8 @@ func _physics_process(delta):
 		var node = collision.get_collider()
 		if node.has_method("crack"):
 			node.crack()
+
+
+func _on_game_over_zone_body_entered(body):
+	if (body.has_method("move_and_slide")):
+		game_over.emit()
