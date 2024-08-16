@@ -7,6 +7,8 @@ const SPEED = 700
 func _ready():
 	var player = get_node("/root/Game/Player")
 	velocity = global_position.direction_to(player.global_position) * SPEED
+	var game_over_zone = get_node("/root/Game/GameOverZone")
+	game_over_zone.body_entered.connect(_on_game_over_zone_body_entered)
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
@@ -19,5 +21,5 @@ func _physics_process(delta):
 
 func _on_game_over_zone_body_entered(body):
 	if (body.has_method("move_and_slide")):
-		queue_free()
 		game_over.emit()
+		queue_free()
