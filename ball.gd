@@ -18,9 +18,7 @@ func _physics_process(delta):
 		if node.has_method("crack"):
 			node.crack()
 
-
 func _on_game_over_zone_body_entered(body):
-	print("_on_game_over_zone_body_entered: ", body)
 	if (body.has_method("move_and_slide") and body.get_rid() == get_rid()):
 		game_over.emit()
 		queue_free()
