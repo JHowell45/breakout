@@ -27,13 +27,13 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("1_wtcrm")]
 position = Vector2(567, 618)
 
-[node name="Wall" parent="." instance=ExtResource("2_stwos")]
+[node name="LeftWall" parent="." instance=ExtResource("2_stwos")]
 position = Vector2(-10, 308)
 
-[node name="Wall2" parent="." instance=ExtResource("2_stwos")]
+[node name="RightWall" parent="." instance=ExtResource("2_stwos")]
 position = Vector2(1162, 314)
 
-[node name="Floor" parent="." instance=ExtResource("3_r1gvo")]
+[node name="Ceiling" parent="." instance=ExtResource("3_r1gvo")]
 position = Vector2(559, -10)
 
 [node name="Ball" parent="." instance=ExtResource("4_mqxkg")]
