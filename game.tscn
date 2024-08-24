@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://l20jvncgqkbr"]
+[gd_scene load_steps=10 format=3 uid="uid://l20jvncgqkbr"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_evi1b"]
 [ext_resource type="Script" path="res://StartSplashScreen.gd" id="1_g2so0"]
 [ext_resource type="PackedScene" uid="uid://dg6w8qq2rhdcj" path="res://player.tscn" id="1_wtcrm"]
 [ext_resource type="PackedScene" uid="uid://cgshbb65nw1jk" path="res://wall.tscn" id="2_stwos"]
@@ -12,6 +13,7 @@
 size = Vector2(1152, 30)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_evi1b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
