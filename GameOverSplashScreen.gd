@@ -6,6 +6,7 @@ func _ready():
 	
 func _on_button_pressed():
 	get_tree().reload_current_scene()
+	Globals.ball_count = 1
 
 func _on_ball_game_over():
 	Globals.ball_count -= 1
